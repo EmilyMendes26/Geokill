@@ -7,6 +7,7 @@ var tiro = preload("res://tiro.tscn")
 
 func _ready():
 	posicao = position
+	add_to_group("player")
 	
 func _physics_process(delta: float) -> void:
 	if (Input.is_action_just_pressed("direita") && position.x + tamanho_mapa <= limite_mapa):
