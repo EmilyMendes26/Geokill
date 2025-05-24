@@ -31,7 +31,9 @@ position = Vector2(-56, 24)
 
 [node name="inimigo_triangulo" parent="." instance=ExtResource("3_mxkdn")]
 position = Vector2(-56, -24)
-scale = Vector2(0.833716, 0.833716)
+rotation = 3.13926
+scale = Vector2(0.803721, 0.803721)
+script = null
 
 [node name="inimigo_quadrado" parent="." instance=ExtResource("4_c3sxu")]
 position = Vector2(-40, -24)
