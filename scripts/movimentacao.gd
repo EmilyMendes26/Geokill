@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 @export var posicao: Vector2
+const largura_mapa = 8
 const tamanho_mapa = 16
-var limite_mapa = 56
+var limite_mapa = (16 * largura_mapa)/2
 var tiro = preload("res://tiro.tscn")
 
 func _ready():
@@ -16,7 +17,6 @@ func _physics_process(delta: float) -> void:
 		position.x -= tamanho_mapa
 	if (Input.is_action_just_pressed("tiro")):
 		atirar()
-	print(limite_mapa,position.x)
 		
 func atirar():
 	var tiro = tiro.instantiate() #prepara o tiro para ser instanciado

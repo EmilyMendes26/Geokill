@@ -1,6 +1,7 @@
 extends Area2D
 
-const limite_mapa = 32
+const altura_mapa = 4
+const limite_mapa = (16 * altura_mapa)/2
 var velocidade = 16
 var tempo_tiro = 0.5
 var tempo = 0
