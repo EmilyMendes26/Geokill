@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=4 uid="uid://bb3pvwov6o5fx"]
+
+[ext_resource type="Texture2D" uid="uid://bcsbanwhul8mt" path="res://sprite/grid.png" id="1_2vsai"]
+[ext_resource type="PackedScene" uid="uid://biwcjfm4846b1" path="res://player_quadrado.tscn" id="2_fwo5d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwo5d"]
+texture = ExtResource("1_2vsai")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mxkdn"]
+sources/0 = SubResource("TileSetAtlasSource_fwo5d")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 0.84)
+zoom = Vector2(7, 7)
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_mxkdn")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_fwo5d")]
+position = Vector2(-56, 24)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://sx5y7f7ecx6d"]
+
+[ext_resource type="Texture2D" uid="uid://duoxwd2p4hi12" path="res://sprite/player.png" id="1_3pjhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqcqt"]
+atlas = ExtResource("1_3pjhf")
+region = Rect2(32.693, 0, 15.307, 15.4513)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vykcw"]
+radius = 6.08276
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_uqcqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vykcw")
