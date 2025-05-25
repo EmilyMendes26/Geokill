@@ -15,7 +15,7 @@ texture = ExtResource("1_2vsai")
 [sub_resource type="TileSet" id="TileSet_mxkdn"]
 sources/0 = SubResource("TileSetAtlasSource_fwo5d")
 
-[node name="Node2D" type="Node2D"]
+[node name="game" type="Node2D"]
 script = ExtResource("1_w1627")
 
 [node name="IA" type="Node2D" parent="."]
