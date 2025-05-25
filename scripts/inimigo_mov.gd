@@ -30,4 +30,4 @@ func define_forma():
 	regex.compile('inimigo_(\\w+)')
 	forma = regex.search(arquivo)
 	
-	return forma
+	return forma.get_string(1)

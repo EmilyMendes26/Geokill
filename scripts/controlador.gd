@@ -3,6 +3,7 @@ extends Node2D
 
 var botao
 var forma
+var ponto = 0
 
 var formas = {
 	"circulo": preload("res://player_circulo.tscn"),
@@ -81,3 +82,7 @@ func troca(forma,botao):
 					outra_forma.position = posicao
 					add_child(outra_forma)
 					player = outra_forma
+					
+func adiciona_ponto():
+	ponto += 1
+	print(ponto)

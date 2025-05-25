@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 func atirar():
 	var tiro = tiro.instantiate() #prepara o tiro para ser instanciado
 	tiro.global_position = global_position
+	tiro.player_forma = forma
 	get_tree().root.add_child(tiro) #Instancia o tiro no mundo e adiciona ao mesmo nivel que o jogador na hierarquia
 
 func define_forma():
