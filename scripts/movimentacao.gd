@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var posicao: Vector2
-const largura_mapa = 8
+const largura_mapa = 10
 const tamanho_mapa = 16
 var limite_mapa = (16 * largura_mapa)/2
 var tiro = preload("res://tiro.tscn")

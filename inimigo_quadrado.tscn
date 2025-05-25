@@ -1,23 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4kfhhvla2ia8"]
+[gd_scene load_steps=4 format=3 uid="uid://b4kfhhvla2ia8"]
 
-[ext_resource type="Texture2D" uid="uid://duoxwd2p4hi12" path="res://sprite/player.png" id="1_alsxh"]
 [ext_resource type="Script" uid="uid://cswnipuq0nrsf" path="res://scripts/inimigo_mov.gd" id="1_odmub"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jilp6"]
-atlas = ExtResource("1_alsxh")
-region = Rect2(15.5943, 0.0805321, 16.1337, 15.8802)
+[ext_resource type="Texture2D" uid="uid://dyxasbywem136" path="res://sprite/Inimigo Quadrado.png" id="2_odmub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odmub"]
-size = Vector2(32.3723, 29.8822)
+size = Vector2(10, 9)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_odmub")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_jilp6")
+scale = Vector2(0.0773684, 0.0708856)
+texture = ExtResource("2_odmub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.19209e-07)
-rotation = -3.14159
-scale = Vector2(0.401577, 0.408678)
 shape = SubResource("RectangleShape2D_odmub")

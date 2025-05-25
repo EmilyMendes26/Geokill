@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck1ny0dhxvpib"]
+[gd_scene load_steps=3 format=3 uid="uid://ck1ny0dhxvpib"]
 
 [ext_resource type="Script" uid="uid://bc00buajds5lr" path="res://scripts/movimentacao.gd" id="1_32o0q"]
-[ext_resource type="Texture2D" uid="uid://duoxwd2p4hi12" path="res://sprite/player.png" id="1_u70ct"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_32o0q"]
-atlas = ExtResource("1_u70ct")
-region = Rect2(0, 0, 15.6777, 16)
+[ext_resource type="Texture2D" uid="uid://dj347u7kp0b2p" path="res://sprite/Player Triangulo.png" id="2_32o0q"]
 
 [node name="Node2D" type="CharacterBody2D"]
+scale = Vector2(0.732976, 0.75532)
 script = ExtResource("1_32o0q")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-build_mode = 1
-polygon = PackedVector2Array(0, -8, -6, 5, 7, 5)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_32o0q")
+position = Vector2(0, -8)
+scale = Vector2(-0.0939454, 0.203856)
+texture = ExtResource("2_32o0q")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.996507, 0.984144)
+build_mode = 1
+polygon = PackedVector2Array(0, -8.12889, -6.02103, 5.08056, 6.02103, 5.08056)

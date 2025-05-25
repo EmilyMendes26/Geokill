@@ -1,9 +1,12 @@
 extends Node2D
 @onready var player: CharacterBody2D = $player
+@onready var score: Label = $Label
+
 
 var botao
 var forma
 var ponto = 0
+var vida = 3
 
 var formas = {
 	"circulo": preload("res://player_circulo.tscn"),
@@ -12,6 +15,13 @@ var formas = {
 }
 
 func _physics_process(delta):
+	score.text = "Score: " + str(ponto) + "\nVida: " + str(vida)
+	
+	if vida == 0:
+		score.text = "Perdeu!"
+	if ponto >= 5 && vida != 0:
+		score.text = "Ganhou!"
+	
 	if (Input.is_action_just_pressed("troca_proximo")):
 		botao = 'proximo'
 		forma = player.forma
@@ -85,4 +95,9 @@ func troca(forma,botao):
 					
 func adiciona_ponto():
 	ponto += 1
-	print(ponto)
+
+func perde_vida():
+	vida -= 1
+	
+	if vida <= 0:
+		vida = 0

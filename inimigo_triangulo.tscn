@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://gly2f6skgckq"]
+[gd_scene load_steps=3 format=3 uid="uid://gly2f6skgckq"]
 
 [ext_resource type="Script" uid="uid://cswnipuq0nrsf" path="res://scripts/inimigo_mov.gd" id="1_jilp6"]
-[ext_resource type="Texture2D" uid="uid://duoxwd2p4hi12" path="res://sprite/player.png" id="1_m8fus"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jilp6"]
-atlas = ExtResource("1_m8fus")
-region = Rect2(0, 0, 15.5943, 15.9608)
+[ext_resource type="Texture2D" uid="uid://dddnga6xhsgah" path="res://sprite/Inimigo Triangulo.png" id="2_jilp6"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = 3.14159
+scale = Vector2(0.740571, 0.838305)
 script = ExtResource("1_jilp6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_jilp6")
+scale = Vector2(0.0922249, 0.204435)
+texture = ExtResource("2_jilp6")
+offset = Vector2(7.62939e-06, -39.1323)
 
-[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.996507, 0.984144)
 build_mode = 1
-polygon = PackedVector2Array(0, -8, -6, 5, 7, 5)
+polygon = PackedVector2Array(0, -8.12889, -6.02103, 5.08056, 6.02103, 5.08056)

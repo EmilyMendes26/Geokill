@@ -2,7 +2,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 
 var player
-const largura_mapa = 8
+const largura_mapa = 10
 const limite_mapa = (largura_mapa * 16)/2
 var heuristica_circulo = 100
 var heuristica_triangulo = 50

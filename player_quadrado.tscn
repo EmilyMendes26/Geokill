@@ -1,22 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://biwcjfm4846b1"]
+[gd_scene load_steps=4 format=3 uid="uid://biwcjfm4846b1"]
 
-[ext_resource type="Texture2D" uid="uid://duoxwd2p4hi12" path="res://sprite/player.png" id="1_0ev85"]
 [ext_resource type="Script" uid="uid://bc00buajds5lr" path="res://scripts/movimentacao.gd" id="1_b700u"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b700u"]
-atlas = ExtResource("1_0ev85")
-region = Rect2(15.4203, 0, 17.3858, 16.2102)
+[ext_resource type="Texture2D" uid="uid://b11puti0t1lu0" path="res://sprite/Player Quadrado.png" id="2_b700u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1ehg"]
-size = Vector2(10, 10)
+size = Vector2(10, 9)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_b700u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.08616e-07, 0.5)
-scale = Vector2(0.941176, 0.9375)
-texture = SubResource("AtlasTexture_b700u")
+scale = Vector2(0.0792165, -0.0714291)
+texture = ExtResource("2_b700u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_w1ehg")

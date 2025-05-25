@@ -1,15 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://bb3pvwov6o5fx"]
+[gd_scene load_steps=8 format=4 uid="uid://bb3pvwov6o5fx"]
 
-[ext_resource type="Texture2D" uid="uid://bcsbanwhul8mt" path="res://sprite/grid.png" id="1_2vsai"]
 [ext_resource type="Script" uid="uid://dwsv5jgg0dqi2" path="res://scripts/controlador.gd" id="1_w1627"]
 [ext_resource type="PackedScene" uid="uid://biwcjfm4846b1" path="res://player_quadrado.tscn" id="2_fwo5d"]
-[ext_resource type="PackedScene" uid="uid://gly2f6skgckq" path="res://inimigo_triangulo.tscn" id="3_mxkdn"]
-[ext_resource type="PackedScene" uid="uid://b4kfhhvla2ia8" path="res://inimigo_quadrado.tscn" id="4_c3sxu"]
-[ext_resource type="PackedScene" uid="uid://cyphl7r8t0ll" path="res://inimigo_circulo.tscn" id="5_828d7"]
+[ext_resource type="Texture2D" uid="uid://drs8tjl5qfgfm" path="res://sprite/Mapa Radar.png" id="3_c3sxu"]
+[ext_resource type="FontFile" uid="uid://bii3p2u7it3c1" path="res://fonts/tinypixel.otf" id="5_828d7"]
 [ext_resource type="Script" uid="uid://bt6s8e44w4kkw" path="res://scripts/ia.gd" id="6_wjoo6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwo5d"]
-texture = ExtResource("1_2vsai")
+texture = ExtResource("3_c3sxu")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mxkdn"]
@@ -27,26 +25,24 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1, 0.84)
-zoom = Vector2(7, 7)
+zoom = Vector2(7.2, 6.7)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_mxkdn")
 
 [node name="player" parent="." instance=ExtResource("2_fwo5d")]
-position = Vector2(-56, 24)
+position = Vector2(-72, 40)
 
-[node name="inimigo_triangulo" parent="." instance=ExtResource("3_mxkdn")]
-position = Vector2(-56, -24)
-scale = Vector2(0.833716, 0.833716)
-
-[node name="inimigo_quadrado" parent="." instance=ExtResource("4_c3sxu")]
-position = Vector2(-40, -24)
-scale = Vector2(0.823305, 0.823305)
-
-[node name="inimigo_circulo" parent="." instance=ExtResource("5_828d7")]
-position = Vector2(-24, -24)
-scale = Vector2(0.832735, 0.832735)
+[node name="Label" type="Label" parent="."]
+offset_left = -80.0
+offset_top = -48.0
+offset_right = -40.0
+offset_bottom = -25.0
+scale = Vector2(0.379729, 0.439698)
+theme_override_fonts/font = ExtResource("5_828d7")
+theme_override_font_sizes/font_size = 16
+text = "SCORE: 0"
 
 [connection signal="timeout" from="IA/Timer" to="IA" method="_on_timer_timeout"]

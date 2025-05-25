@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var controlador: Node2D = get_tree().root.get_node('game')
 
-const altura_mapa = 4
+const altura_mapa = 6
 const limite_mapa = (16 * altura_mapa)/2
 var velocidade = 16
 var tempo_tiro = 0.2

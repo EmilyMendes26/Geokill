@@ -1,23 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyphl7r8t0ll"]
+[gd_scene load_steps=4 format=3 uid="uid://cyphl7r8t0ll"]
 
 [ext_resource type="Script" uid="uid://cswnipuq0nrsf" path="res://scripts/inimigo_mov.gd" id="1_4ud0g"]
-[ext_resource type="Texture2D" uid="uid://duoxwd2p4hi12" path="res://sprite/player.png" id="1_y2pjp"]
+[ext_resource type="Texture2D" uid="uid://3y3et33cbfl4" path="res://sprite/Inimigo Círculo.png" id="2_4ud0g"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jilp6"]
-atlas = ExtResource("1_y2pjp")
-region = Rect2(33.1885, 1.25692, 14.459, 14.7038)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_alsxh"]
-radius = 13.9129
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ud0g"]
+radius = 6.08276
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.838637, 0.807988)
 script = ExtResource("1_4ud0g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_jilp6")
+scale = Vector2(0.0958708, 0.0965498)
+texture = ExtResource("2_4ud0g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.69407e-21, 2.01948e-28)
-rotation = -3.14159
-scale = Vector2(0.438515, 0.440799)
-shape = SubResource("CircleShape2D_alsxh")
+shape = SubResource("CircleShape2D_4ud0g")

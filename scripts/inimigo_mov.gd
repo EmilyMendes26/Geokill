@@ -1,10 +1,11 @@
 extends CharacterBody2D
+@onready var controlador: Node2D = get_tree().root.get_node('game')
 
-const altura_mapa = 3
+const altura_mapa = 5
 const limite_mapa = (16 * altura_mapa)/2
 var posicao: Vector2
 var velocidade = 16
-var tempo_tiro = 1
+var tempo_andar = 0.5
 var tempo = 0
 var forma
 
@@ -16,11 +17,12 @@ func _ready():
 func _physics_process(delta):
 	tempo += delta
 	
-	if tempo >= tempo_tiro:
+	if tempo >= tempo_andar:
 		position.y += velocidade
 		tempo = 0.0
 	
 	if (position.y >= limite_mapa):
+		controlador.perde_vida()
 		queue_free()
 		
 func define_forma():
