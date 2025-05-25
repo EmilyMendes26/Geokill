@@ -6,8 +6,10 @@ var posicao: Vector2
 var velocidade = 16
 var tempo_tiro = 1
 var tempo = 0
+var forma
 
 func _ready():
+	forma = define_forma()
 	posicao = position
 	add_to_group("inimigo")
 	
@@ -20,3 +22,12 @@ func _physics_process(delta):
 	
 	if (position.y >= limite_mapa):
 		queue_free()
+		
+func define_forma():
+	var forma
+	var arquivo = get_scene_file_path()
+	var regex = RegEx.new()
+	regex.compile('inimigo_(\\w+)')
+	forma = regex.search(arquivo)
+	
+	return forma

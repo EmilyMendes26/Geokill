@@ -18,11 +18,19 @@ sources/0 = SubResource("TileSetAtlasSource_fwo5d")
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w1627")
 
+[node name="IA" type="Node2D" parent="."]
+script = ExtResource("6_wjoo6")
+
+[node name="Timer" type="Timer" parent="IA"]
+wait_time = 2.0
+autostart = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1, 0.84)
 zoom = Vector2(7, 7)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
+z_index = -1
 tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_mxkdn")
 
@@ -41,5 +49,4 @@ scale = Vector2(0.823305, 0.823305)
 position = Vector2(-24, -24)
 scale = Vector2(0.832735, 0.832735)
 
-[node name="IA" type="Node2D" parent="."]
-script = ExtResource("6_wjoo6")
+[connection signal="timeout" from="IA/Timer" to="IA" method="_on_timer_timeout"]
