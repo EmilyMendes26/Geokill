@@ -5,7 +5,7 @@ const altura_mapa = 5
 const limite_mapa = (16 * altura_mapa)/2
 var posicao: Vector2
 var velocidade = 16
-var tempo_andar = 0.5
+var tempo_andar = 0.7
 var tempo = 0
 var forma
 

@@ -17,7 +17,7 @@ var formas = {
 func _physics_process(delta):
 	score.text = "Score: " + str(ponto) + "\nVida: " + str(vida)
 	
-	if vida == 0:
+	if vida == 0 && ponto < 5:
 		score.text = "Perdeu!"
 	if ponto >= 5 && vida != 0:
 		score.text = "Ganhou!"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5tgk8plw2wn4"]
 
-[ext_resource type="Texture2D" uid="uid://6yusduet8qml" path="res://icon.svg" id="1_rivwi"]
 [ext_resource type="Script" uid="uid://bm6j14foneahs" path="res://scripts/tiro.gd" id="2_gp2hl"]
+[ext_resource type="Texture2D" uid="uid://bcsbanwhul8mt" path="res://sprite/grid.png" id="2_wib4g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp2hl"]
 size = Vector2(19.1611, 29.7006)
@@ -11,8 +11,9 @@ scale = Vector2(0.167114, 0.162811)
 script = ExtResource("2_gp2hl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.296875, 0.3125)
-texture = ExtResource("1_rivwi")
+position = Vector2(1.43051e-06, -4.76837e-07)
+scale = Vector2(2.24398, 2.30328)
+texture = ExtResource("2_wib4g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8.01998e-09, 0.5)
