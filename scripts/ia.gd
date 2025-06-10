@@ -110,23 +110,3 @@ func _on_timer_timeout() -> void:
 	formas = define_heuristica(player_forma)
 	forma_escolhida = algoritmo_guloso(formas)
 	spawn_inimigo(forma_escolhida)
-
-	
-
-#Ja defini heuristicas dinamicamente
-#Ja defini spawn dinamico -> avaliar se tem como melhorar a posição do spawn
-#definir o algoritmo guloso para escolher a melhor forma
-
-#Lógica e montagem:
-#Lógica:
-	#Mapeia forma do player quando for spawnar o inimigo OK
-	#Mando para o algoritmo definir a heurística OK
-	#Manda o dicionário para o algoritmo guloso escolher qual inimigo spawnar
-	#Manda a forma escolhida para o spawn que vai ser chamado no timeout OK
-	
-#Montagem:
-	#Só preciso que função da Heurística seja chamada no timeout!!
-	#1 - timeout : forma_player
-	#2 - timeout : define heuristica
-	#3 - timeout : algoritmo guloso
-	#4 - timeout: spawn inimigo
